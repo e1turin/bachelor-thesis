@@ -28,26 +28,26 @@ Verik:
 FPGA Twitch 03 - Введение в высокоуровневый синтез - High Level Synthesis (часть 1 из 2):
 - https://youtu.be/a2SQQNgB4iQ
 
-- FIRRTL (dead):
-    - https://github.com/chipsalliance/firrtl
+FIRRTL (dead):
+- https://github.com/chipsalliance/firrtl
 
-- CIRCT — Circuit IR Compilers and Tools
-    - https://circt.llvm.org/
-	- https://github.com/llvm/circt
-	- Arcilator — 
-        - https://youtu.be/iwJBlRUz6Vw
-        - https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf
-	- ИСП РАН: https://gitlab.ispras.ru/mvg/mvg-oss/circt
+CIRCT — Circuit IR Compilers and Tools
+- https://circt.llvm.org/
+- https://github.com/llvm/circt
+- Arcilator — 
+    - https://youtu.be/iwJBlRUz6Vw
+    - https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf
+- ИСП РАН: https://gitlab.ispras.ru/mvg/mvg-oss/circt
 
-- Venus rv32i — Kotlin RISC-V emulator:
-    - https://github.com/kvakil/venus
-- БЭВМ на Java
-    - https://github.com/tune-it/bcomp
+Venus rv32i — Kotlin RISC-V emulator:
+- https://github.com/kvakil/venus
+БЭВМ на Java
+- https://github.com/tune-it/bcomp
 
-- HIL 
-    - https://www.google.com/search?q=hardware+in+the+loop
-- PIL 
-    - https://www.google.com/search?q=processor+in+the+loop
+HIL 
+- https://www.google.com/search?q=hardware+in+the+loop
+PIL 
+- https://www.google.com/search?q=processor+in+the+loop
 
 ## Задание...
 
