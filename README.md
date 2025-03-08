@@ -41,6 +41,7 @@ Controls.kt:
 - https://engineer.yadro.com/wp-content/uploads/2024/06/gasanov-slides.pdf
 
 CHISEL:
+- https://www.chisel-lang.org/docs
 - https://www.imm.dtu.dk/~masca/chisel-book.pdf
 - Обзор Chisel для генерации сложных цифровых схем и сравнение с System Verilog:
   - https://youtu.be/d_vlVsoJ8vI
@@ -66,8 +67,11 @@ CIRCT — Circuit IR Compilers and Tools
 - https://circt.llvm.org/
 - https://github.com/llvm/circt
 - Arcilator — 
-    - https://youtu.be/iwJBlRUz6Vw
-    - https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf
+    - video [2023 LLVM Dev Mtg - Arcilator: Fast and cycle-accurate hardware simulation in CIRCT](https://youtu.be/iwJBlRUz6Vw)
+      - [slides](https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf)
+    - video [2024 EuroLLVM - Arcilator for ages five and up: flexible self-contained hardware simulation made..](https://youtu.be/lE7ynoMstQA)
+      - [slides](https://llvm.org/devmtg/2024-04/slides/QuickTalks/Degioanni-Arcilator.pdf)
+    - slides: [Circuit IR for Compilers and Tools, Creating hardware for ML](https://hc34.hotchips.org/assets/program/tutorials/MLIR/HC2022.SiFive-MSFT.LenharthDemme.v1.pdf)
 - ИСП РАН: https://gitlab.ispras.ru/mvg/mvg-oss/circt
 
 Venus rv32i — Kotlin RISC-V emulator:
