@@ -3,6 +3,11 @@
 <!--toc:start-->
 - [Бакалаврский диплом](#бакалаврский-диплом)
   - [Ссылки](#ссылки)
+    - [Controls.kt:](#controlskt)
+    - [CIRCT](#circt)
+      - [Arcilator —](#arcilator)
+    - [CHISEL](#chisel)
+    - [Прочее](#прочее)
     - [Название инструмента](#название-инструмента)
     - [Размышления](#размышления)
   - [Задание...](#задание)
@@ -27,7 +32,8 @@
 
 ## Ссылки
 
-Controls.kt: 
+### Controls.kt: 
+
 - https://sciprog.center/projects/controls
   - docs: [device spec](https://git.sciprog.center/kscience/controls-kt/src/branch/master/docs/Device%20and%20DeviceSpec.md)
 - https://git.sciprog.center/kscience/dataforge-core
@@ -37,15 +43,59 @@ Controls.kt:
   - про Chisel: https://t.me/SciProgCentre/26604
 - пока ничего на [youtrack issues](https://sciprog.center/youtrack/issues?q=%23Controls-kt)
 
-ИРИС – инструментарий разработки интегральных схем в среде С++:
-- https://engineer.yadro.com/wp-content/uploads/2024/06/gasanov-slides.pdf
 
-CHISEL:
+### CIRCT
+
+CIRCT — Circuit IR Compilers and Tools
+
+- https://circt.llvm.org/
+- https://github.com/llvm/circt
+
+#### Arcilator — 
+
+video [2023 LLVM Dev Mtg - Arcilator: Fast and cycle-accurate hardware simulation in CIRCT](https://youtu.be/iwJBlRUz6Vw)
+- [slides](https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf)
+
+video [2024 EuroLLVM - Arcilator for ages five and up: flexible self-contained hardware simulation made..](https://youtu.be/lE7ynoMstQA)
+- [slides](https://llvm.org/devmtg/2024-04/slides/QuickTalks/Degioanni-Arcilator.pdf)
+
+slides: [Circuit IR for Compilers and Tools, Creating hardware for ML](https://hc34.hotchips.org/assets/program/tutorials/MLIR/HC2022.SiFive-MSFT.LenharthDemme.v1.pdf)
+
+Тесты
+- https://github.com/circt/arc-tests
+  - https://github.com/circt/arc-tests/blob/main/rocket/rocket-model-arc.cpp
+    - uses https://github.com/llvm/circt/blob/main/tools/arcilator/arcilator-header-cpp.py
+
+- ИСП РАН: https://gitlab.ispras.ru/mvg/mvg-oss/circt
+
+### CHISEL
+
+CHISEL —
+
+Зависимость на 
+- Firtool для генерации Verilog
+- Verilator для симуляции Verilog
+
 - https://www.chisel-lang.org/docs
 - https://www.imm.dtu.dk/~masca/chisel-book.pdf
 - Обзор Chisel для генерации сложных цифровых схем и сравнение с System Verilog:
   - https://youtu.be/d_vlVsoJ8vI
 
+FIRRTL — Промежуточное представление для Chisel, теперь диалект CIRCT
+- https://github.com/chipsalliance/firrtl
+- https://circt.llvm.org/docs/Dialects/FIRRTL/
+
+
+### Прочее
+
+Venus rv32i — Kotlin RISC-V emulator:
+- https://github.com/kvakil/venus
+БЭВМ на Java
+- https://github.com/tune-it/bcomp
+
+MiL/SiL/PiL/HiL
+- https://youtu.be/EZthOn4_0rw
+- https://www.mathworks.com/matlabcentral/answers/440277-what-are-mil-sil-pil-and-hil-and-how-do-they-integrate-with-the-model-based-design-approach#answer_356873
 
 Quokka:
 - https://www.youtube.com/live/_MrGRMY-6jE
@@ -60,28 +110,8 @@ Verik:
 FPGA Twitch 03 - Введение в высокоуровневый синтез - High Level Synthesis (часть 1 из 2):
 - https://youtu.be/a2SQQNgB4iQ
 
-FIRRTL (dead):
-- https://github.com/chipsalliance/firrtl
-
-CIRCT — Circuit IR Compilers and Tools
-- https://circt.llvm.org/
-- https://github.com/llvm/circt
-- Arcilator — 
-    - video [2023 LLVM Dev Mtg - Arcilator: Fast and cycle-accurate hardware simulation in CIRCT](https://youtu.be/iwJBlRUz6Vw)
-      - [slides](https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf)
-    - video [2024 EuroLLVM - Arcilator for ages five and up: flexible self-contained hardware simulation made..](https://youtu.be/lE7ynoMstQA)
-      - [slides](https://llvm.org/devmtg/2024-04/slides/QuickTalks/Degioanni-Arcilator.pdf)
-    - slides: [Circuit IR for Compilers and Tools, Creating hardware for ML](https://hc34.hotchips.org/assets/program/tutorials/MLIR/HC2022.SiFive-MSFT.LenharthDemme.v1.pdf)
-- ИСП РАН: https://gitlab.ispras.ru/mvg/mvg-oss/circt
-
-Venus rv32i — Kotlin RISC-V emulator:
-- https://github.com/kvakil/venus
-БЭВМ на Java
-- https://github.com/tune-it/bcomp
-
-MiL/SiL/PiL/HiL
-- https://youtu.be/EZthOn4_0rw
-- https://www.mathworks.com/matlabcentral/answers/440277-what-are-mil-sil-pil-and-hil-and-how-do-they-integrate-with-the-model-based-design-approach#answer_356873
+ИРИС – инструментарий разработки интегральных схем в среде С++:
+- https://engineer.yadro.com/wp-content/uploads/2024/06/gasanov-slides.pdf
 
 
 ### Название инструмента
