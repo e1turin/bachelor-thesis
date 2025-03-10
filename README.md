@@ -58,6 +58,7 @@ video [2023 LLVM Dev Mtg - Arcilator: Fast and cycle-accurate hardware simulatio
 
 video [2024 EuroLLVM - Arcilator for ages five and up: flexible self-contained hardware simulation made..](https://youtu.be/lE7ynoMstQA)
 - [slides](https://llvm.org/devmtg/2024-04/slides/QuickTalks/Degioanni-Arcilator.pdf)
+  - диалект немного устарел и теперь другой — [в проекте ИПКН](#ipkn-arc-sim)
 
 slides: [Circuit IR for Compilers and Tools, Creating hardware for ML](https://hc34.hotchips.org/assets/program/tutorials/MLIR/HC2022.SiFive-MSFT.LenharthDemme.v1.pdf)
 
@@ -65,6 +66,9 @@ slides: [Circuit IR for Compilers and Tools, Creating hardware for ML](https://h
 - https://github.com/circt/arc-tests
   - https://github.com/circt/arc-tests/blob/main/rocket/rocket-model-arc.cpp
     - uses https://github.com/llvm/circt/blob/main/tools/arcilator/arcilator-header-cpp.py
+
+ИПКН DevTools проект <a name="ipkn-arc-sim"></a>
+- https://github.com/YAGRIT/risc-v/blob/dev/testbenches/regfile.mlir
 
 - ИСП РАН: https://gitlab.ispras.ru/mvg/mvg-oss/circt
 
