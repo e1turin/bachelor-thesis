@@ -51,14 +51,16 @@ CIRCT — Circuit IR Compilers and Tools
 - https://circt.llvm.org/
 - https://github.com/llvm/circt
 
-#### Arcilator — 
+#### Arcilator
+
+Arcilator — симулятор моделей на диалектах CIRCT (MLIR) (компилятор в llvm и/или исполнение этого кода) 
 
 video [2023 LLVM Dev Mtg - Arcilator: Fast and cycle-accurate hardware simulation in CIRCT](https://youtu.be/iwJBlRUz6Vw)
 - [slides](https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf)
 
 video [2024 EuroLLVM - Arcilator for ages five and up: flexible self-contained hardware simulation made..](https://youtu.be/lE7ynoMstQA)
 - [slides](https://llvm.org/devmtg/2024-04/slides/QuickTalks/Degioanni-Arcilator.pdf)
-  - диалект немного устарел и теперь другой — [в проекте ИПКН](#ipkn-arc-sim)
+  - диалект немного устарел и теперь другой — в проекте ИПКН [¶](#ipkn-arc-sim)
 
 slides: [Circuit IR for Compilers and Tools, Creating hardware for ML](https://hc34.hotchips.org/assets/program/tutorials/MLIR/HC2022.SiFive-MSFT.LenharthDemme.v1.pdf)
 
