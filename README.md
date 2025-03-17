@@ -50,6 +50,7 @@ CIRCT — Circuit IR Compilers and Tools
 
 - https://circt.llvm.org/
 - https://github.com/llvm/circt
+- https://godbolt.org/noscript/circt
 
 #### Arcilator
 
