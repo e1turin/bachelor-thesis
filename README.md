@@ -5,8 +5,9 @@
   - [Ссылки](#ссылки)
     - [Controls.kt:](#controlskt)
     - [CIRCT](#circt)
-      - [Arcilator —](#arcilator)
+      - [Arcilator](#arcilator)
     - [CHISEL](#chisel)
+    - [Kotlin/Native](#kotlinnative)
     - [Прочее](#прочее)
     - [Название инструмента](#название-инструмента)
     - [Размышления](#размышления)
@@ -92,6 +93,30 @@ FIRRTL — Промежуточное представление для Chisel, 
 - https://github.com/chipsalliance/firrtl
 - https://circt.llvm.org/docs/Dialects/FIRRTL/
 
+### Kotlin/Native
+
+Project Panama — https://openjdk.org/projects/panama/
+- FFM API — Foreign Function & Memory API
+  - Настя Лисицкая — FFM API — ничего общего с радио — https://youtu.be/HiF7EjAtdZM
+  - Linker API: https://github.com/openjdk/panama-foreign/blob/foreign-memaccess%2Babi/doc/panama_ffi.md
+    - > Performance-wise, the reader might ask how efficient calling a foreign
+      > function using a native method handle is; the answer is very. The JVM comes
+      > with some special support for native method handles, so that, if a give
+      > method handle is invoked many times (e.g, inside a hot loop), the JIT
+      > compiler might decide to generate a snippet of assembly code required to
+      > call the native function, and execute that directly. In most cases, invoking
+      > native function this way is as efficient as doing so through JNI.
+- jextract — 
+  - samples: https://github.com/openjdk/jextract/tree/master/samples
+
+JNI
+
+Different samples of native interop
+- https://github.com/whyoleg/kotlin-interop-playground/tree/main/c-interop
+
+Knee -- seamlessly interop
+- https://opensource.deepmedia.io/knee
+- Только андроид?
 
 ### Прочее
 
