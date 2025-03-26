@@ -63,7 +63,6 @@ MathWorks: Mathlab & Simulink
     - MATLAB for FPGA, ASIC, and SoC Production Design and Verification: https://www.mathworks.com/solutions/fpga-asic-soc-development/production-design-verification.html
     - Getting Started Using MATLAB and Simulink for FPGA, ASIC, and SoC Development: https://www.mathworks.com/solutions/fpga-asic-soc-development/resources.html
 - Simulink
-  - 
 
 Amesim
 
@@ -76,8 +75,25 @@ Amesim
 CIRCT — Circuit IR Compilers and Tools
 
 - https://circt.llvm.org/
+  - Description: https://circt.llvm.org/docs/Charter/
 - https://github.com/llvm/circt
+  - Releases firtool: https://github.com/llvm/circt/releases — collection of llvm, mlir, circt tools
 - https://godbolt.org/noscript/circt
+- Using CIRCT for FPGA Physical Design: https://capra.cs.cornell.edu/latte22/paper/10.pdf
+
+Основан на MLIR и предлагает свои диалекты для описания различной логики аппаратуты: https://circt.llvm.org/docs/Dialects/
+- hw: https://circt.llvm.org/docs/Dialects/HW/
+  - Dialect Rationale: https://circt.llvm.org/docs/Dialects/HW/RationaleHW/
+  - low documentation, so should see sources: https://github.com/llvm/circt/blob/main/lib/Dialect/HW/HWTypes.cpp
+- arc: https://circt.llvm.org/docs/Dialects/Arc/
+  - arc.sim — используется при симулировании работы прямо в MLIR (`@entry` для запуска в arcilator [¶](#arc-sim))
+- sv: https://circt.llvm.org/docs/Dialects/SV/
+  - Dialect Rationale: https://circt.llvm.org/docs/Dialects/SV/RationaleSV/
+- ...
+
+
+
+
 
 #### Arcilator
 
@@ -86,16 +102,20 @@ Arcilator — симулятор моделей на диалектах CIRCT (M
 video [2023 LLVM Dev Mtg - Arcilator: Fast and cycle-accurate hardware simulation in CIRCT](https://youtu.be/iwJBlRUz6Vw)
 - [slides](https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf)
 
-video [2024 EuroLLVM - Arcilator for ages five and up: flexible self-contained hardware simulation made..](https://youtu.be/lE7ynoMstQA)
+video [2024 EuroLLVM - Arcilator for ages five and up: flexible self-contained hardware simulation made..](https://youtu.be/lE7ynoMstQA) <a name="arc-sim"></a>
 - [slides](https://llvm.org/devmtg/2024-04/slides/QuickTalks/Degioanni-Arcilator.pdf)
   - диалект немного устарел и теперь другой — в проекте ИПКН [¶](#ipkn-arc-sim)
 
 slides: [Circuit IR for Compilers and Tools, Creating hardware for ML](https://hc34.hotchips.org/assets/program/tutorials/MLIR/HC2022.SiFive-MSFT.LenharthDemme.v1.pdf)
 
+issues
+- [[Arc] Introduce a Python simulation script generator for arcilator #7942](https://github.com/llvm/circt/issues/7942)
+
 Тесты
-- https://github.com/circt/arc-tests
+- https://github.com/circt/arc-tests — тесты для различных проектов, например, rocket rv-chip исполняющий код из elf-файла
   - https://github.com/circt/arc-tests/blob/main/rocket/rocket-model-arc.cpp
     - uses https://github.com/llvm/circt/blob/main/tools/arcilator/arcilator-header-cpp.py
+    - and https://github.com/llvm/circt/blob/main/tools/arcilator/arcilator-runtime.h
 
 ИПКН DevTools проект <a name="ipkn-arc-sim"></a>
 - https://github.com/YAGRIT/risc-v/blob/dev/testbenches/regfile.mlir
@@ -117,6 +137,7 @@ CHISEL —
 
 FIRRTL — Промежуточное представление для Chisel, теперь диалект CIRCT
 - https://github.com/chipsalliance/firrtl
+  - https://github.com/chipsalliance/firrtl-spec/blob/main/spec.md
 - https://circt.llvm.org/docs/Dialects/FIRRTL/
 
 ### Kotlin/Native
@@ -293,35 +314,6 @@ Controls.kt и его архитектурные подходы через де�
 ## Защита
 
 ### Предзащита
-
-> Уважаемые студенты!
->
-> 🔍 26,27,28 февраля пройдёт первое прослушивание ваших ВКР. Оно будет
-> проходить на русском языке в zoom (ссылка будет позже).
->
-> Таблица с распределением студентов по дням и времени (ищите в файле вкладку
-> с вашей группой) -
-> https://docs.google.com/spreadsheets/d/108VXrHwRSkW0DzsfxA3F5i6N1EY1eeBp92CyNGKrkik/edit?usp=sharing
->
-> Для 1-го прослушивания ВКР необходимо подготовить краткое сообщение (не
-> более 3 минут) со следующей информацией:
->
-> 📎Тема ВКР
->
-> 📎Актуальность темы. Здесь для обоснования следует использовать данные,
-> например, из статистических отчетов, подтверждающих актуальность решаемых
-> задач (проблем).
->
-> 📎Цель и задачи ВКР
->
-> 📎План работы
->
-> ‼️Примечание: для выступления необходимо подготовить материалы в виде
-> презентации. Шаблон
-> (https://docs.google.com/presentation/d/1W9aYz4DsghPoxW8heycQ5dFslVoLblaK/edit#slide=id.p1)
-> презентации.
->
-> С уважение, секретарь комиссии Кирсанова Ольга Владимировна
 
 [google presentation](https://docs.google.com/presentation/d/1oYHiMF2HuB65wSx1xpEgHd4VrCoTfuKjCs94U5cVWxw/edit?usp=sharing) (comments)
 
