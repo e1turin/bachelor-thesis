@@ -29,12 +29,14 @@
     - [Возможные вопросы](#возможные-вопросы)
 <!--toc:end-->
 
-тема: «Реализация модуль моделирования аппаратуры для SCADA-системы Controls.kt»
+<!-- тема: «Реализация модуль моделирования аппаратуры для SCADA-системы Controls.kt» -->
+тема: «Реализация модуля моделирования аппаратуры для SCADA-систем»
 
 ## Ссылки
 
 ### Controls.kt: 
 
+Центр научного программирования МФТИ 
 - https://sciprog.center/projects/controls
   - docs: [device spec](https://git.sciprog.center/kscience/controls-kt/src/branch/master/docs/Device%20and%20DeviceSpec.md)
 - https://git.sciprog.center/kscience/dataforge-core
@@ -44,6 +46,29 @@
   - про Chisel: https://t.me/SciProgCentre/26604
 - пока ничего на [youtrack issues](https://sciprog.center/youtrack/issues?q=%23Controls-kt)
 
+#### Альтернативы
+
+Сравнение: [COMPARISON_TABLE.md](./COMPARISON_TABLE.md)
+
+AnyLogic
+
+LabView
+
+MathWorks: Mathlab & Simulink
+- https://www.mathworks.com/company.html
+- Mathlab
+  - MATLAB for FPGA, ASIC, and SoC Development: https://www.mathworks.com/solutions/fpga-asic-soc-development.html
+    - MATLAB for FPGA Prototyping: https://www.mathworks.com/solutions/fpga-asic-soc-development/prototyping.html
+    - MATLAB for FPGA, ASIC, and SoC Production Design and Verification: https://www.mathworks.com/solutions/fpga-asic-soc-development/production-design-verification.html
+    - Getting Started Using MATLAB and Simulink for FPGA, ASIC, and SoC Development: https://www.mathworks.com/solutions/fpga-asic-soc-development/resources.html
+- Simulink
+  - 
+
+Amesim
+
+ЦИТМ Экспонента
+- Engee: https://start.engee.com/
+  - хвалебные оды на хабре: https://habr.com/ru/companies/etmc_exponenta/articles/854554/
 
 ### CIRCT
 
@@ -119,6 +144,12 @@ Knee -- seamlessly interop
 - Только андроид?
 
 ### Прочее
+
+ПИШ ИТМО: https://pish.itmo.ru/
+
+ВИТШ ИТМО: https://itmo.ru/ru/viewfaculty/115/
+
+Сообщество FPGA Systems: https://t.me/fpgasystems
 
 Venus rv32i — Kotlin RISC-V emulator:
 - https://github.com/kvakil/venus
