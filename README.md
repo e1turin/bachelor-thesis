@@ -39,6 +39,7 @@
 Центр научного программирования МФТИ 
 - https://sciprog.center/projects/controls
   - docs: [device spec](https://git.sciprog.center/kscience/controls-kt/src/branch/master/docs/Device%20and%20DeviceSpec.md)
+    - "Troisk nu-mass" experiment: https://www.inr.ru/~numass/
 - https://git.sciprog.center/kscience/dataforge-core
 - из telegram [@SciProgCentre](https://t.me/SciProgCentre):
   - про создание внутреннего формата представления ~VCD: https://t.me/SciProgCentre/24449
