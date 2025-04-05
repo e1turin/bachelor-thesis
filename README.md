@@ -83,6 +83,7 @@ CIRCT — Circuit IR Compilers and Tools
   - Description: https://circt.llvm.org/docs/Charter/
 - https://github.com/llvm/circt
   - Releases firtool: https://github.com/llvm/circt/releases — collection of llvm, mlir, circt tools
+  - x86_64 only. So, on MacOS use: `arch -x86_64 <cmd>` if needed. And so MacOS x86_64 JDK (https://jdk.java.net/archive/).
 - https://godbolt.org/noscript/circt
 - Using CIRCT for FPGA Physical Design: https://capra.cs.cornell.edu/latte22/paper/10.pdf
 
