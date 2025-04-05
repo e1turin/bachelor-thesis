@@ -160,6 +160,11 @@ Project Panama — https://openjdk.org/projects/panama/
       > compiler might decide to generate a snippet of assembly code required to
       > call the native function, and execute that directly. In most cases, invoking
       > native function this way is as efficient as doing so through JNI.
+    - openjdk sources: 
+      - impls https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/foreign
+      - ifaces https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/java/lang/foreign
+        - uses `java.lang.invoke` API (отлично описывается в докладе https://youtu.be/DgshYDTpS9I)
+
 - jextract — 
   - samples: https://github.com/openjdk/jextract/tree/master/samples
 
