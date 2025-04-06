@@ -83,6 +83,7 @@ CIRCT — Circuit IR Compilers and Tools
   - Description: https://circt.llvm.org/docs/Charter/
 - https://github.com/llvm/circt
   - Releases firtool: https://github.com/llvm/circt/releases — collection of llvm, mlir, circt tools
+  - x86_64 only. So, on MacOS use: `arch -x86_64 <cmd>` if needed. And so MacOS x86_64 JDK (https://jdk.java.net/archive/).
 - https://godbolt.org/noscript/circt
 - Using CIRCT for FPGA Physical Design: https://capra.cs.cornell.edu/latte22/paper/10.pdf
 
@@ -159,6 +160,11 @@ Project Panama — https://openjdk.org/projects/panama/
       > compiler might decide to generate a snippet of assembly code required to
       > call the native function, and execute that directly. In most cases, invoking
       > native function this way is as efficient as doing so through JNI.
+    - openjdk sources: 
+      - impls https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/foreign
+      - ifaces https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/java/lang/foreign
+        - uses `java.lang.invoke` API (отлично описывается в докладе https://youtu.be/DgshYDTpS9I)
+
 - jextract — 
   - samples: https://github.com/openjdk/jextract/tree/master/samples
 - Native Memory Processor — pet project. Gen wrappers from annotations.
