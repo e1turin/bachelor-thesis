@@ -161,6 +161,8 @@ Project Panama — https://openjdk.org/projects/panama/
       > native function this way is as efficient as doing so through JNI.
 - jextract — 
   - samples: https://github.com/openjdk/jextract/tree/master/samples
+- Native Memory Processor — pet project. Gen wrappers from annotations.
+  - https://github.com/DigitalSmile/native-memory-processor
 
 JNI
 
