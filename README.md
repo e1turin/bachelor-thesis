@@ -222,6 +222,9 @@ FPGA Twitch 03 - Введение в высокоуровневый синтез
 - CIRCT = Circuit IR Compilers & Tools
 - Controls.kt ~ ctl, ctrl
 
+> cirkt -- wrapper
+> Circulator -- adapter
+
 ### Размышления
 
 Хочется иметь возможность симулировать систему прямо в Kotlin, вместе с
