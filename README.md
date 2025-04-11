@@ -45,6 +45,8 @@
   - про создание внутреннего формата представления ~VCD: https://t.me/SciProgCentre/24449
   - про задачу моделирования аппаартуры: https://t.me/SciProgCentre/26576
   - про Chisel: https://t.me/SciProgCentre/26604
+- доклад про Controls-kt на JPoint. Тезис про моделирование приборов в системе:
+  - https://youtu.be/KWt6wIgVyWQ?t=1504
 - пока ничего на [youtrack issues](https://sciprog.center/youtrack/issues?q=%23Controls-kt)
 
 #### Альтернативы
@@ -164,11 +166,15 @@ Project Panama — https://openjdk.org/projects/panama/
       - impls https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/jdk/internal/foreign
       - ifaces https://github.com/openjdk/jdk/tree/master/src/java.base/share/classes/java/lang/foreign
         - uses `java.lang.invoke` API (отлично описывается в докладе https://youtu.be/DgshYDTpS9I)
-
-- jextract — 
+- jextract — generate Java classes from C headers
   - samples: https://github.com/openjdk/jextract/tree/master/samples
 - Native Memory Processor — pet project. Gen wrappers from annotations.
   - https://github.com/DigitalSmile/native-memory-processor
+- Kotlin Poet
+  - generate Kotlin classes on compile time
+    - kobweb (from Reddit descussion: https://www.reddit.com/r/Kotlin/comments/rgf136/dynamically_generated_class_during_compile_time/)
+      - https://github.com/varabyte/kobweb/blob/8bf70e4f098dd56a143bdd7d745c95f6e91030c8/gradle-plugins/application/src/main/kotlin/com/varabyte/kobweb/gradle/application/templates/MainTemplate.kt#L11
+      - https://github.com/varabyte/kobweb/blob/ee05c8eee7f53d3494fb02d8709c4fe914525272/gradle-plugins/application/src/main/kotlin/com/varabyte/kobweb/gradle/application/tasks/KobwebGenerateSiteTask.kt#L55
 
 JNI
 
@@ -221,6 +227,7 @@ FPGA Twitch 03 - Введение в высокоуровневый синтез
 - HardWare
 - CIRCT = Circuit IR Compilers & Tools
 - Controls.kt ~ ctl, ctrl
+- Arcilator = arc
 
 > cirkt -- wrapper
 > Circulator -- adapter
