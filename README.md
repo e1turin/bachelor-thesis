@@ -227,10 +227,22 @@ FPGA Twitch 03 - Введение в высокоуровневый синтез
 - HardWare
 - CIRCT = Circuit IR Compilers & Tools
 - Controls.kt ~ ctl, ctrl
+- OOC = out-of-controls
 - Arcilator = arc
+- model
 
-> cirkt -- wrapper
-> Circulator -- adapter
+> cirkt -- lib
+> Circulator-kt -- wrapper
+> Controlator -- Controls-kt adapter
+> Coock -- circuit out of controls-kt
+> cookt -- https://en.wiktionary.org/wiki/cookt
+> catch -- circuits at controls hardware
+> hatch -- hardware at contrlos
+> mocha -- models of controls hardware (мокко -- кофе)
+> cirkus --
+> cikl, cycle
+> cyclatron -- scientific experiments, 'caiklatron', -tor ~ -tron, cycles,
+
 
 ### Размышления
 
