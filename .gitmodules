@@ -1,3 +1,6 @@
 [submodule "hw4ctls-kt"]
 	path = hw4ctls-kt
 	url = https://github.com/e1turin/hw4ctls-kt
+[submodule "circulator-kt"]
+	path = circulator-kt
+	url = https://github.com/e1turin/circulator-kt.git
