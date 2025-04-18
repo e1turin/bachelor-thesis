@@ -101,6 +101,10 @@ cmake -G Ninja ../llvm -DLLVM_ENABLE_PROJECTS=mlir -DLLVM_BUILD_EXAMPLES=ON -DLL
 
 ## Сборка CIRCT
 
+### На Macbook M3
+
+Собралось примерно за час вместе со скачиванием LLVM и прогоном тестов.
+
 ```sh
 git clone https://github.com/circt/circt.git
 cd circt
@@ -108,20 +112,19 @@ git submodule init
 git submodule update
 
 # build llvm
-mkdir llvm/build
-cd llvm/build
-cmake -G Ninja ../llvm -DLLVM_ENABLE_PROJECTS="mlir" -DLLVM_TARGETS_TO_BUILD="host" -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE=DEBUG -DLLVM_USE_SPLIT_DWARF=ON -DLLVM_ENABLE_LLD=ON
-cmake --build .
-cmake --build . --target check-mlir
 
-# build circt
-cd -
-mkdir build
-cd build
-cmake -G Ninja .. -DMLIR_DIR=D:/Projects/LLVM/circt/llvm/build/lib/cmake/mlir -DLLVM_DIR=D:/Projects/LLVM/circt/llvm/build/lib/cmake/llvm -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE=DEBUG -DLLVM_USE_SPLIT_DWARF=ON -DLLVM_ENABLE_LLD=ON
-cmake --build .
-cmake --build . --target check-circt
-cmake --build . --target check-circt-integration
+mkdir llvm/build
+
+cmake -B llvm/build -G Ninja llvm/llvm -DLLVM_ENABLE_PROJECTS="mlir" -DLLVM_TARGETS_TO_BUILD="host" -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE=DEBUG -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+
+cmake --build llvm/build
+cmake --build llvm/build --target check-mlir
+
+# build circt (with slang enabled for circt-verilog)
+
+cmake -B build -G Ninja . -DMLIR_DIR=$PWD/llvm/build/lib/cmake/mlir -DLLVM_DIR=$PWD/llvm/build/lib/cmake/llvm -DLLVM_ENABLE_ASSERTIONS=ON -DCMAKE_BUILD_TYPE=DEBUG -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCIRCT_SLANG_FRONTEND_ENABLED=ON
+cmake --build build --target check-circt
+cmake --build build --target check-circt-integration
 ```
 
 
