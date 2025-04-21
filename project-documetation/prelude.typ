@@ -2,12 +2,14 @@
   title: str,
   author: str
 ) = {
-  align(center)[
-    #v(10cm)
-    #text(24pt, weight: "bold")[#title]
-    #v(1cm)
-    #author
-  ]
+  // align(center)[
+  //   #v(10cm)
+  //   #text(24pt, weight: "bold")[#title]
+  //   #v(1cm)
+  //   #author
+  // ]
+
+  include "report-title-page.typ"
 
   // pagebreak()
 }
@@ -42,6 +44,7 @@
     spacing: 1em,
   )
 
+  show heading: set block(spacing: 1.5em)
   show heading.where(depth: 2): it => {
     block(inset: (left: 1.25cm), it)
   }
