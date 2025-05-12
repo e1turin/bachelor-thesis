@@ -149,6 +149,12 @@ FIRRTL — Промежуточное представление для Chisel, 
 
 ### Kotlin/Native
 
+Достаточно статически слинковаться с библиотекой. Нужно иметь C-header библиотеки и конфигурировать Konan `.def` файл. 
+
+### Kotlin/JVM
+
+#### Project Panama FFM API
+
 Project Panama — https://openjdk.org/projects/panama/
 - FFM API — Foreign Function & Memory API
   - Oracle Documentation of FFM API: https://docs.oracle.com/en/java/javase/21/core/foreign-function-and-memory-api.html
@@ -169,13 +175,21 @@ Project Panama — https://openjdk.org/projects/panama/
   - samples: https://github.com/openjdk/jextract/tree/master/samples
 - Native Memory Processor — pet project. Gen wrappers from annotations.
   - https://github.com/DigitalSmile/native-memory-processor
+
+В свой черед, можно генерировать код во время компиляции с помощью плагина используещего Kotlin Poet.
+
 - Kotlin Poet
   - generate Kotlin classes on compile time
     - kobweb (from Reddit descussion: https://www.reddit.com/r/Kotlin/comments/rgf136/dynamically_generated_class_during_compile_time/)
       - https://github.com/varabyte/kobweb/blob/8bf70e4f098dd56a143bdd7d745c95f6e91030c8/gradle-plugins/application/src/main/kotlin/com/varabyte/kobweb/gradle/application/templates/MainTemplate.kt#L11
       - https://github.com/varabyte/kobweb/blob/ee05c8eee7f53d3494fb02d8709c4fe914525272/gradle-plugins/application/src/main/kotlin/com/varabyte/kobweb/gradle/application/tasks/KobwebGenerateSiteTask.kt#L55
 
-JNI
+#### JNI
+
+JNI - Java Native Interface
+- Требуются обертки на C/C++ - нужны разработчики на этих языках,
+- технология старая, начиная с ранних версий Java,
+- и не поддается JIT оптимизации в отличии от того, как это делает FFM API.
 
 Different samples of native interop
 - https://github.com/whyoleg/kotlin-interop-playground/tree/main/c-interop
