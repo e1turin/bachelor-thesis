@@ -119,3 +119,5 @@
   v(1em)
 }
 
+
+#let noindent(body) = par(first-line-indent: 0em, body)
