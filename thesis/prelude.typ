@@ -29,6 +29,14 @@
   show figure.caption.where(kind: table): it => [
     #align(left)[#it]
   ]
+  show figure.where(kind: raw): it => {
+    rect(it)
+  }
+
+  show table: set par(leading: 0.65em)
+  show table: set text(size: 12pt)
+
+
   doc
 }
 
@@ -48,6 +56,7 @@
     spacing: 1em,
     leading: 1em, // междустрочный интервал
   )
+
   doc
 }
 
