@@ -20,23 +20,50 @@
 // }
 
 #let set_figures_format(doc) = {
+
   set figure.caption(separator: [ --- ])
+
+
   /* 4.5 Изображения */
   show figure.where(kind: image): set figure(supplement: "Рисунок")
+
   /* 4.6 Таблицы */
   show figure.where(kind: table): set figure(supplement: "Таблица")
   show figure.where(kind: table): set figure.caption(position: top)
   show figure.caption.where(kind: table): it => [
     #align(left)[#it]
   ]
+
+  // Листинги
   show figure.where(kind: raw): it => {
-    rect(it)
+    block[
+      #set text(size: 12pt, spacing: 100%)
+      #set par(leading: 0.65em)
+      #set block(width: 100%)
+      #rect(it.body)
+      #it.caption
+    ]
   }
 
+  // Отступ от основного текста
+  show figure: it => {
+    v(1em)
+    it
+    v(1em)
+  }
+
+  doc
+}
+
+#let set_table_format(doc) = {
   show table: set par(leading: 0.65em)
-  show table: set text(size: 12pt)
+  show table: set text(size: 14pt)
 
+  doc
+}
 
+#let set_label_format(doc) = {
+  set ref(supplement: none)
   doc
 }
 
@@ -98,6 +125,8 @@
 
   show: set_terms_format
   show: set_figures_format
+  show: set_label_format
+  show: set_table_format
   show: set_text_format
 
 
@@ -127,6 +156,5 @@
   ]
   v(1em)
 }
-
 
 #let noindent(body) = par(first-line-indent: 0em, body)
