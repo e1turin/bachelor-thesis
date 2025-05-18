@@ -58,7 +58,7 @@
 #let set_table_format(doc) = {
   show table: set par(leading: 0.65em)
   show table: set text(size: 14pt)
-
+  show table: set block(breakable: true)
   doc
 }
 
