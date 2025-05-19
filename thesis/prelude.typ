@@ -84,6 +84,12 @@
     leading: 1em, // междустрочный интервал
   )
 
+  set heading(numbering: "1.1")
+  show heading: set block(spacing: 1.5em)
+  show heading.where(depth: 2): it => {
+    block(inset: (left: 1.25cm), it)
+  }
+
   doc
 }
 
@@ -95,7 +101,6 @@
 ) = {
 
   /* 4.3 Титульник не нумеруется */
-  set page(numbering: "1")
   title_page
 
   set document(
@@ -115,10 +120,6 @@
     numbering: "1",
   )
 
-  show heading: set block(spacing: 1.5em)
-  show heading.where(depth: 2): it => {
-    block(inset: (left: 1.25cm), it)
-  }
 
   set list(marker: [--])
   set enum(numbering: "1.")
@@ -129,9 +130,6 @@
   show: set_table_format
   show: set_text_format
 
-
-  // counter(page).update(2)
-  set heading(numbering: "1.1")
 
   doc
 }
