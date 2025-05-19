@@ -37,10 +37,12 @@
   // Листинги
   show figure.where(kind: raw): it => {
     block[
-      #set text(size: 12pt, spacing: 100%)
-      #set par(leading: 0.65em)
-      #set block(width: 100%)
-      #rect(it.body)
+      #[
+        #set text(size: 12pt, spacing: 100%)
+        #set par(leading: 0.65em)
+        #set block(width: 100%)
+        #rect(it.body)
+      ]
       #it.caption
     ]
   }
