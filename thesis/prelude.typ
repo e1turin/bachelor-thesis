@@ -87,10 +87,16 @@
     leading: 1em, // междустрочный интервал
   )
 
-  set heading(numbering: "1.1")
+  set heading(numbering: "1.1.")
   show heading: set block(spacing: 1.5em)
   show heading.where(depth: 2): it => {
     block(inset: (left: 1.25cm), it)
+  }
+  show heading.where(depth: 1): it => {
+    pagebreak()
+    align(center)[
+      #it
+    ]
   }
 
   doc
@@ -148,7 +154,7 @@
    4.4.1 Структурные элементы */
 #let struct(name, outlined: true) = {
   /* 4.4.2 */
-  pagebreak()
+  // pagebreak()
   align(center)[
     #heading(
       numbering: none,

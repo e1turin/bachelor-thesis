@@ -1,3 +1,11 @@
+controls-repo:
+  type: web
+  title: "kscience/controls-kt: Lightweight SCADA device servers and integrations in Kotlin-Multiplatform - controls-kt - SPC-git"
+  url:
+    value: https://git.sciprog.center/kscience/controls-kt
+    data: 2025-04-15
+  publisher: SPC
+
 bib:kotlin-poet:
   type: web
   title: "KotlinPoet"
