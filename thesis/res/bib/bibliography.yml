@@ -1,0 +1,141 @@
+bib:kotlin-poet:
+  type: web
+  title: "KotlinPoet"
+  url:
+    value: https://square.github.io/kotlinpoet/
+    date: 2025-04-06
+
+kotlin-multiplatform-gradle:
+  type: web
+  title: "The basics of Kotlin Multiplatform project structure | Kotlin Multiplatform Development Documentation"
+  url:
+    value: https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-discover-project.html#targets
+    date: 2025-03-29
+  publisher: JetBrains
+  date: 2025-05-16
+
+gradle-plugin:
+  type: web
+  title: "Implementing Binary Plugins"
+  url:
+    value: https://docs.gradle.org/current/userguide/implementing_gradle_plugins_binary.html
+    date: 2025-04-06
+  
+
+digital-synthesis:
+  type: Book
+  title: "Цифровой синтез: практический курс"
+  author:
+    - Антонов А. А.
+    - Барабанов А. В.
+    - Данчек Ч. Т.
+    - Жельнио С. Л.
+    - Иванец С. А.
+    - Кудрявцев И. А.
+    - Панчул Ю. В.
+    - Романов А. Ю.
+    - Романова И. И.
+    - Телятников А. А.
+    - Шуплецов М. С.
+  serial-number:
+    isbn:  978-5-97060-850-0
+  publisher: "ДМК Пресс"
+  date: 2020
+  location: "Москва"
+  page-total: 556
+
+spc-controls:
+  type: Web
+  title: "Controls-kt"
+  url:
+    value: https://sciprog.center/projects/controls
+    date: 2025-05-19
+  date: 2025-05-19
+
+kotlin-book:
+  type: Book
+  title: "Kotlin. Сборник рецептов. Предметный подход = Kotlin cookbook"
+  author: "Коузен, Кен"
+  publisher: "ДМК Пресс"
+  location: "Москва"
+  date: 2021
+  page-total: 218
+  # translation: "en"
+  # SBN 978-1-492-04667-7
+
+
+circt-presentation:
+  type: performance
+  title: "CIRCT: Lifting hardware development out of the 20th century"
+  author:
+    - "Andrew Lenharth and Chris Lattner"
+  url:
+    value: https://llvm.org/devmtg/2021-11/slides/2021-CIRCT-LiftingHardwareDevOutOfThe20thCentury.pdf
+    date: 2025-05-19
+  publisher: "SIFIVE"
+  date: "2021-11-17"
+
+arcilator-presentation:
+  type: performance
+  title: "Arcilator. Fast and cycle-accurate hardware simulation in CIRCT"
+  url: 
+    value: https://llvm.org/devmtg/2023-10/slides/techtalks/Erhart-Arcilator-FastAndCycleAccurateHardwareSimulationInCIRCT.pdf
+    date: 2025-03-24
+  author:
+    - Martin Erhart
+    - Fabian Schuiki
+    - Zachary Yedidia
+    - Bea Healy
+    - Tobias Grosser
+  
+
+arcilator-simulation:
+  type: performance
+  title: "Arcilator for ages five and up. Flexible self-contained hardware simulation made easy"
+  author: "Théo Degioanni"
+  url:
+    value: https://llvm.org/devmtg/2024-04/slides/QuickTalks/Degioanni-Arcilator.pdf
+    date: 2025-03-24
+  date: 2024-04
+
+chisel-book:
+  type: Book
+  title: "Digital Design with Chisel"
+  author: "Martin Schoeberl"
+  edition: 6
+  publisher: "Martin Schoeberl"
+  serial-number:
+    isbn: 9781689336031
+  url:
+    value: https://www.imm.dtu.dk/~masca/chisel-book.pdf
+    date: 2025-03-25
+
+systemc-book:
+  type: Book
+  title: "Project Panama: Interconnecting JVM and native code"
+  url:
+    value: http://www.toe-mirea.ru/download/file47.pdf
+    date: 2025-04-13
+  author: "В.А. АЛЕХИН"
+  date: 2017
+  location: "Москва"
+  publisher: "МИРЭА"
+  serial-number:
+    УДЛ: 004.414.2.
+  page-total: 396
+
+project-panama:
+  type: Article
+  title: "Project Panama: Interconnecting JVM and native code"
+  url:
+    value: https://openjdk.org/projects/panama/
+    date: 2025-03-25
+
+verik:
+  type: Report
+  title: "Verik: Reinterpreting Kotlin as a Hardware Description Language"
+  url:
+    value: https://hdl.handle.net/1721.1/145151
+  author: Wang, Francis
+  date: 2022-05
+  publisher: Massachusetts Institute of Technology

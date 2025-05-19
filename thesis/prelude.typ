@@ -4,8 +4,9 @@
 
 #let set_terms_format(doc) = {
   set terms(
-    separator: [ --- ],
+    separator: [ -- ],
     indent: 0em,
+    hanging-indent: 0em,
   ) 
   doc
 }
