@@ -47,9 +47,10 @@ digital-synthesis:
     - Шуплецов М. С.
   serial-number:
     isbn:  978-5-97060-850-0
-  publisher: "ДМК Пресс"
+  publisher: 
+    name: "ДМК Пресс"
+    location: "Москва"
   date: 2020
-  location: "Москва"
   page-total: 556
 
 spc-controls:
@@ -64,12 +65,13 @@ kotlin-book:
   type: Book
   title: "Kotlin. Сборник рецептов. Предметный подход = Kotlin cookbook"
   author: "Коузен, Кен"
-  publisher: "ДМК Пресс"
-  location: "Москва"
+  publisher:
+    name: "ДМК Пресс"
+    location: "Москва"
   date: 2021
   page-total: 218
-  # translation: "en"
-  # SBN 978-1-492-04667-7
+  serial-number:
+    isbn: 978-5-97060-883-8
 
 
 circt-presentation:
@@ -126,8 +128,9 @@ systemc-book:
     date: 2025-04-13
   author: "В.А. АЛЕХИН"
   date: 2017
-  location: "Москва"
-  publisher: "МИРЭА"
+  publisher:
+    name: "МИРЭА"
+    location: "Москва"
   serial-number:
     УДЛ: 004.414.2.
   page-total: 396

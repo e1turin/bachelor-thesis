@@ -232,7 +232,8 @@
       <text variable="publisher-place"/>
       <text variable="publisher"/>
     </group>
-    <text macro="year-date" suffix="."/>
+    <!-- <text macro="year-date" suffix="."/> -->
+    <text macro="year-date"/>
   </macro>
   <macro name="day-month">
     <date variable="issued">
@@ -375,7 +376,7 @@
     Электронный ресурс локального доступа (CD-ROM, компьютерная программа и др.))__
     _______________________________________________________________________________ -->
       <if type="book">
-        <group delimiter=". – ">
+        <group delimiter=" – ">
           <group delimiter=" / ">
             <group delimiter=". ">
               <group delimiter=" : ">
@@ -384,7 +385,7 @@
                 <text macro="number-of-volumes"/>
               </group>
               <text macro="volume"/>
-              <text variable="title-short"/>
+              <!-- <text variable="title-short"/> -->
             </group>
             <group delimiter=" ">
               <text macro="second-position-creators"/>
@@ -403,6 +404,9 @@
               </group>
             </if>
           </choose>
+          <group prefix="ISBN " delimiter=", ">
+            <text variable="ISBN"/>
+          </group>
         </group>
       </if>
 <!--_______________________________________________________________________________
@@ -458,7 +462,7 @@
           <text macro="publisher"/>
           <text macro="volume"/>
           <text macro="collection-number"/>
-          <text variable="title-short"/>
+          <!-- <text variable="title-short"/> -->
           <text macro="page"/>
           <choose>
             <if variable="accessed">
@@ -487,7 +491,7 @@
           </group>
           <text macro="year-date"/>
           <text macro="volume"/>
-          <text variable="title-short"/>
+          <!-- <text variable="title-short"/> -->
           <text variable="issue" prefix="№&#160;"/>
           <text macro="page"/>
           <choose>
@@ -512,7 +516,7 @@
             </group>
             <text variable="container-title"/>
           </group>
-          <text variable="title-short"/>
+          <!-- <text variable="title-short"/> -->
           <text macro="year-date"/>
           <text macro="day-month"/>
           <text macro="page"/>
@@ -559,7 +563,7 @@
                 <text macro="number-of-volumes"/>
               </group>
               <text macro="volume"/>
-              <text variable="title-short"/>
+              <!-- <text variable="title-short"/> -->
             </group>
             <group delimiter=" ">
               <text macro="second-position-creators"/>

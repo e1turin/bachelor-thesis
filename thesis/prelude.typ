@@ -24,18 +24,30 @@
 
   set figure.caption(separator: [ --- ])
 
+  show figure: set rect(stroke: {0.1pt})
 
   /* 4.5 Изображения */
   show figure.where(kind: image): set figure(supplement: "Рисунок")
+  show figure.where(kind: image): it => {
+    block(rect[#it.body]) /* в рамочку! */
+    it.caption
+  }
 
   /* 4.6 Таблицы */
   show figure.where(kind: table): set figure(supplement: "Таблица")
+  /* 4.6.3 Название таблицы помещают вверху слева над таблицей выравнивание по
+   * левому краю */
   show figure.where(kind: table): set figure.caption(position: top)
-  show figure.caption.where(kind: table): it => [
-    #align(left)[#it]
-  ]
+  show figure.caption.where(kind: table): it => { 
+    /* Если наименование таблицы занимает 
+      две строки и более, то его следует
+      записывать через один межстрочный интервал. */
+    set par(leading: 0.65em)
+    /* без абзацного отступа, */
+    block(width: 100%, align(left)[#it])
+  }
 
-  // Листинги
+  /* Листинги */
   show figure.where(kind: raw): it => {
     block[
       #[
@@ -48,7 +60,7 @@
     ]
   }
 
-  // Отступ от основного текста
+  /* Отступ от основного текста */
   show figure: it => {
     v(1em)
     it
@@ -87,8 +99,19 @@
     leading: 1em, // междустрочный интервал
   )
 
-  set heading(numbering: "1.1.")
+  /*
+  4.4.4 Заголовки разделов и подразделов начинаются с абзацного отступа.
+  Название раздела пишется прописными буквами, полужирным шрифтом, без
+  подчеркивания, без точки в конце. Допускается заголовки разделов писать
+  обычным шрифтом с прописной буквы, либо полужирным шрифтом с прописной буквы.
+  */
+  set heading(numbering: "1.1")
+  show heading: set text(size: 14pt)
   show heading: set block(spacing: 1.5em)
+  show heading.where(depth: 3): it => {
+    set text(weight: "regular")
+    block(inset: (left: 1.25cm), it)
+  }
   show heading.where(depth: 2): it => {
     block(inset: (left: 1.25cm), it)
   }
