@@ -989,6 +989,31 @@ caption: [Файл конфигурации плагина Circulator]
 Можно выделить следующие этапы компиляции, представленные в таблице
 @tab:compilation-stages с описанием промежуточных артефактов.
 
+/*
+```mermaid
+---
+config:
+  look: classic
+---
+sequenceDiagram
+    participant HDL as Диазйн прибора<br/>на Chisel
+    participant IR as FIRRTL
+    participant CIRCT as CIRCT HW Dialect
+    participant LLVM as LLVM IR
+    participant DL as Динамическая<br/>библиотека
+    participant JSON as Характеристики<br/>модели в JSON
+    participant Kotlin as Программная модель<br/>прибора на Kotlin
+
+    HDL->>IR: компиляция HDL
+    IR->>CIRCT: трансляция IR
+    CIRCT->>LLVM: компиляция<br/>в bitcode
+    LLVM->>DL: компиляция<br/>в нативный код
+    CIRCT->>JSON: анализ модели
+    JSON->>Kotlin: генерация<br/>кода
+    DL->>Kotlin: динамическая загрузка библиотеки
+```
+*/
+
 #figure(block(width: 100%)[#v(-2em)],
 kind: table,
 caption: [Этапы компиляции с их атрибутами]
