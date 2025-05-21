@@ -734,6 +734,38 @@ J3 -> J1
 также может быть полезно для использования с другими инструментами для создания
 нативных моделей.
 
+/*
+```pluntuml
+@startuml
+    rectangle "Circulator Project" as C {
+        artifact "Core Library" {
+            package "circulator-core" {
+            }
+        }
+        package "circulator-plugin" {
+        }
+        component "Circulator\nGradle Plugin" as GPlugin
+        
+        "circulator-core" <- "circulator-plugin"
+        "circulator-plugin" ..> GPlugin: produce
+    }
+    
+    rectangle System as S {
+        component Model {
+            file "HDL"
+            process Generation
+            file ".kt"
+        }
+        
+        "HDL" . Generation
+        Generation . ".kt"
+    }
+    
+    C-[hidden]->S
+    GPlugin ..> Generation: run
+@enduml
+```
+*/
 #figure(
 image("res/img/circulator-core-class-diagram.svg"),
 caption: "Диаграмма ключевых классов, лежащих в основе Circulator"
@@ -1011,6 +1043,43 @@ sequenceDiagram
     CIRCT->>JSON: анализ модели
     JSON->>Kotlin: генерация<br/>кода
     DL->>Kotlin: динамическая загрузка библиотеки
+```
+```pluntuml
+@startuml
+skinparam sequenceMessageAlign right
+!theme plain
+
+  collections HDL as "HDL"
+  collections CIRCT as "CIRCT\nDialect"
+  collections LLVM as "LLVM\nBitcode"
+  collections DL as "Динамическая\nбиблиотека"
+  collections JSON as "Характеристики\nмодели в JSON"
+  collections Kotlin as "Программная модель\nприбора на Kotlin"
+
+  HDL -> CIRCT
+  CIRCT -> LLVM
+  LLVM -> DL
+  CIRCT -> JSON: анализ модели
+  JSON -> Kotlin: генерация кода
+  DL -> Kotlin: динамическая загрузка библиотеки
+@enduml
+```
+```pluntuml
+@startuml
+  artifact HDL as "HDL"
+  file CIRCT as "CIRCT Dialect"
+  file LLVM as "LLVM Bitcode"
+  artifact DL as "Динамическая\nбиблиотека"
+  file JSON as "Характеристики\nмодели в JSON"
+  artifact Kotlin as "Программная модель\nприбора на Kotlin"
+
+  HDL -> CIRCT
+  CIRCT -> LLVM
+  LLVM -> DL
+  CIRCT --> JSON: анализ\nмодели
+  JSON -> Kotlin: генерация кода
+  DL --> Kotlin: подключение\nбиблиотеки
+@enduml
 ```
 */
 
