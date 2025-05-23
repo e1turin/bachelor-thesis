@@ -737,32 +737,39 @@ J3 -> J1
 /*
 ```pluntuml
 @startuml
-    rectangle "Circulator Project" as C {
-        artifact "Core Library" {
+    rectangle "Circulator Project" {
+        artifact "Core Library" as C #DEF {
             package "circulator-core" {
             }
         }
         package "circulator-plugin" {
         }
-        component "Circulator\nGradle Plugin" as GPlugin
-        
-        "circulator-core" <- "circulator-plugin"
-        "circulator-plugin" ..> GPlugin: produce
+        artifact "Gradle Plugin" #CFC {
+            component "io.github.e1turin.circulator" as G {
+                
+            }
+        }
+        "circulator-core" <-- "circulator-plugin"
+        "circulator-plugin" .> G: produce
     }
     
     rectangle System as S {
-        component Model {
-            file "HDL"
-            process Generation
-            file ".kt"
+        component Model as M {
+            artifact "HDL"
+            process Translation as T #ECE
+            artifact ".kt" as K #FCA
+            artifact "Dynamic Library" as DL
         }
         
-        "HDL" . Generation
-        Generation . ".kt"
+        M -> G
+        "HDL" .> T
+        T .> K
+        K --> DL
+        T .> DL: compile
+        C <- K
     }
     
-    C-[hidden]->S
-    GPlugin ..> Generation: run
+    T <.. G: drive
 @enduml
 ```
 */
@@ -826,28 +833,28 @@ caption: [ сигнатура функций, использующихся дл�
 ```mermaid
 ---
 config:
-  look: classic
+  theme: redux
 ---
 sequenceDiagram
     participant S as Система<br/>управления
-    participant M as Модель
-    participant L as Библиотека<br/>модели
+    box rgb(255,204,170)
+      participant M as Модель
+      participant L as Библиотека<br/>модели
+    end
     participant DL as Динамическая<br/>библиотека
-    loop
-        S->>M: записи значений в свойства
+        S->>M: записи в свойства
         S->>M: 
-        S->>M: вызов eval()
+        S->>M: eval()
         activate M
         M->>L: 
-            L->>DL: вызов функции
+            L->>DL: вызов внешней<br/>функции
             activate DL
             deactivate DL
             DL->>L: 
         L->>M: 
-        M->>S: считывание обновленных<br/>значений свойств
+        M->>S: чтения из свойств
         M->>S: 
         deactivate M
-    end
 ```
 */
 #figure(
@@ -1066,19 +1073,21 @@ skinparam sequenceMessageAlign right
 ```
 ```pluntuml
 @startuml
-  artifact HDL as "HDL"
-  file CIRCT as "CIRCT Dialect"
-  file LLVM as "LLVM Bitcode"
-  artifact DL as "Динамическая\nбиблиотека"
-  file JSON as "Характеристики\nмодели в JSON"
-  artifact Kotlin as "Программная модель\nприбора на Kotlin"
-
-  HDL -> CIRCT
-  CIRCT -> LLVM
-  LLVM -> DL
-  CIRCT --> JSON: анализ\nмодели
-  JSON -> Kotlin: генерация кода
-  DL --> Kotlin: подключение\nбиблиотеки
+    artifact HDL as "HDL"
+    process Translation #ECE {
+        file CIRCT as "CIRCT Dialect"
+        file LLVM as "LLVM Bitcode"
+        file JSON as "Характеристики\nмодели в JSON"
+    }
+    artifact DL as "Динамическая\nбиблиотека"
+    artifact Kotlin as "Программная\nмодель на Kotlin" #FCA
+    
+    HDL -> CIRCT
+    CIRCT -> LLVM
+    LLVM -> DL
+    CIRCT --> JSON: анализ\nмодели
+    JSON -> Kotlin: генерация кода
+    DL --> Kotlin: подключение\nбиблиотеки
 @enduml
 ```
 */
@@ -1449,17 +1458,33 @@ caption: "Исходный код простого примера, исполь�
 /*
 ```pluntuml
 @startuml
-rectangle Система {
-component Контроллер {
-   component Прибор {
-     [Счетчик]
-   }
-}
-Контроллер <-- [Кнопка]
-[Дисплей]  <--  Контроллер
-Контроллер <-> Прибор
-Прибор <-> Счетчик
-}
+left to right direction
+
+    rectangle Система {
+        component Дисплей {
+            portin Byte as din
+        }
+        component "Контроллер" {
+            portout Int as out
+            component "Прибор\n(Controls.kt)" as П {
+                component "Счетчик\n(Circulator)" as Счетчик #FCA {
+                    artifact "Нативная модель" as DL
+                }
+            }
+            portin Int as in
+        }
+        component Кнопка {
+            portout Byte as bout
+        }
+        
+        bout --> in
+        in -> П
+        П <-> Счетчик
+        П -> out
+        out --> din
+    }
+    /'component "Circulator\nGradle Plugin" as G #CFC'/
+    /'artifact "HDL\n(Chisel)" as HDL'/
 
 @enduml
 ```
