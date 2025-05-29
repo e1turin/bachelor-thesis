@@ -1,16 +1,18 @@
+
+#import "report-title-page.typ": title_page
+
 #let title_page(
   title: str,
   author: str
 ) = {
+  title_page()
+
   // align(center)[
   //   #v(10cm)
   //   #text(24pt, weight: "bold")[#title]
   //   #v(1cm)
   //   #author
   // ]
-
-  include "report-title-page.typ"
-
   // pagebreak()
 }
 
