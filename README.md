@@ -82,6 +82,8 @@ MathWorks: Mathlab & Simulink
 
 Amesim
 
+Remex Simtera
+
 ЦИТМ Экспонента
 - Engee: https://start.engee.com/
   - хвалебные оды на хабре: https://habr.com/ru/companies/etmc_exponenta/articles/854554/
